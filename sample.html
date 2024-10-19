@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon-like Slider</title>
+    <style>
+        .todayDeal {
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+            white-space: nowrap; /* Keep all items in a single line */
+        }
+        .dealI {
+            display: inline-block; /* Display items in a row */
+            margin-right: 20px; /* Add space between items */
+            vertical-align: top; /* Align items to the top */
+        }
+        .Tdeal img {
+            width: 200px; /* Adjust image width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <div class="todayDeal">
+        <div class="dealI">
+            <img src="https://m.media-amazon.com/images/I/41U0KBNRk5L._AC_SY200_.jpg" alt="">
+        </div>
+        <div class="dealI">
+            <img src="https://m.media-amazon.com/images/I/415qrqdlu1L._AC_SY200_.jpg" alt="">
+        </div>
+        <!-- Add more deal items here -->
+    </div>
+
+    <script>
+        // JavaScript for sliding the items
+        const todayDeal = document.querySelector('.todayDeal');
+        let scrollAmount = 0;
+
+        function slideRight() {
+            scrollAmount += 300; // Adjust scroll distance as needed
+            todayDeal.scrollTo({
+                top: 0,
+                left: scrollAmount,
+                behavior: 'smooth' // Enable smooth scrolling
+            });
+        }
+
+        function slideLeft() {
+            scrollAmount -= 300; // Adjust scroll distance as needed
+            todayDeal.scrollTo({
+                top: 0,
+                left: scrollAmount,
+                behavior: 'smooth' // Enable smooth scrolling
+            });
+        }
+    </script>
+</body>
+</html>
